@@ -87,6 +87,12 @@ hudu-teams-bot/
 | Expirations | Itens expirando (domínios, certificados, garantias) |
 | Magic Dash | Cards customizados no dashboard |
 
+## Workflow
+
+- Sempre fazer commit ao finalizar uma tarefa, usando [Conventional Commits](https://www.conventionalcommits.org/)
+- Prefixos: `feat:`, `fix:`, `refactor:`, `docs:`, `chore:`, `test:`, `ci:`, `style:`
+- Mensagem concisa descrevendo o "porquê", não o "o quê"
+
 ## Convenções de código
 
 - Seguir as convenções idiomáticas de Go
