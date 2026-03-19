@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.17",
+  "version": "1.0.0",
+  "id": "{{TEAMS_APP_ID}}",
+  "developer": {
+    "name": "SimpleCorp",
+    "websiteUrl": "https://simplecorp.io",
+    "privacyUrl": "https://simplecorp.io/privacy",
+    "termsOfUseUrl": "https://simplecorp.io/terms"
+  },
+  "name": {
+    "short": "Hudu Bot",
+    "full": "Hudu Teams Bot"
+  },
+  "description": {
+    "short": "Hudu integration bot",
+    "full": "Bot for querying Hudu IT documentation from Microsoft Teams"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#6264A7",
+  "bots": [
+    {
+      "botId": "{{TEAMS_APP_ID}}",
+      "scopes": ["personal", "team", "groupChat"],
+      "supportsFiles": false,
+      "isNotificationOnly": false
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": []
+}

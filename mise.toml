@@ -31,3 +31,11 @@ run = "golangci-lint run ./..."
 [tasks.fmt]
 description = "Formata o código"
 run = "gofmt -w ."
+
+[tasks.ngrok]
+description = "Expõe o bot via ngrok"
+run = "ngrok http ${APP_PORT:-3978}"
+
+[tasks.package]
+description = "Empacota o manifest do Teams"
+run = "bash scripts/package-manifest.sh $TEAMS_APP_ID"

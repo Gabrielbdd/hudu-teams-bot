@@ -52,11 +52,13 @@ hudu-teams-bot/
 ├── cmd/
 │   └── bot/              # Entrypoint da aplicação
 │       └── main.go
-├── internal/
-│   ├── config/           # Carregamento de configuração
-│   ├── hudu/             # Cliente da API do Hudu
-│   ├── teams/            # Integração com Microsoft Teams
-│   └── bot/              # Lógica principal do bot
+├── internal/             # Pacotes privados (futuro)
+├── manifest/             # Teams app manifest + ícones
+│   ├── manifest.json     # Template ({{TEAMS_APP_ID}} é substituído no package)
+│   ├── color.png         # 192x192
+│   └── outline.png       # 32x32
+├── scripts/
+│   └── package-manifest.sh
 ├── mise.toml             # Configuração do mise (tools, tasks, env)
 ├── mise.lock             # Lock file do mise (commitado)
 ├── .env                  # Variáveis de ambiente (NÃO commitado)
@@ -64,6 +66,13 @@ hudu-teams-bot/
 ├── go.mod
 └── go.sum
 ```
+
+## Teams Bot
+
+- SDK: [msbotbuilder-go](https://github.com/infracloudio/msbotbuilder-go) — Bot Framework SDK para Go
+- Endpoint: `POST /api/messages` — recebe Activities do Azure Bot Service
+- Autenticação: JWT validation (inbound) + OAuth2 client_credentials (outbound), tratados pelo SDK
+- O bot precisa de um Azure Bot Resource + App Registration (ver README.md)
 
 ## Hudu API
 

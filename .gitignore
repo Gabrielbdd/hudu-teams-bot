@@ -22,3 +22,6 @@ Thumbs.db
 # Mise (local lock não é commitado)
 mise.local.toml
 mise.local.lock
+
+# Dist
+dist/
