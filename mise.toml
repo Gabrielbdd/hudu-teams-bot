@@ -1,0 +1,33 @@
+[settings]
+lockfile = true
+
+[tools]
+go = "prefix:1.24"
+
+[env]
+_.file = [".env"]
+_.path = ["./bin"]
+
+# ── Tasks ──────────────────────────────────────────────
+
+[tasks.build]
+description = "Compila o binário"
+run = "go build -o bin/bot ./cmd/bot"
+sources = ["**/*.go", "go.mod", "go.sum"]
+outputs = ["bin/bot"]
+
+[tasks.dev]
+description = "Roda em modo desenvolvimento"
+run = "go run ./cmd/bot"
+
+[tasks.test]
+description = "Roda os testes"
+run = "go test -race -cover ./..."
+
+[tasks.lint]
+description = "Roda o linter"
+run = "golangci-lint run ./..."
+
+[tasks.fmt]
+description = "Formata o código"
+run = "gofmt -w ."

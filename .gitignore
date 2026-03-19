@@ -1,0 +1,24 @@
+# Binários
+bin/
+*.exe
+
+# Variáveis de ambiente (sensível)
+.env
+.env.local
+
+# Go
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Mise (local lock não é commitado)
+mise.local.toml
+mise.local.lock
